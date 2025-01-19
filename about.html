@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindEase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+            font-family: 'Avenir', sans-serif;
+        }
+
+        /* General page styles */
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #34495e;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        header .website-name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        header .website-name h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        header .website-name .logo {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* Navigation styling */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Main section styles */
+        main {
+            padding: 60px 30px;
+        }
+
+        /* About Us section styling */
+        section.about {
+            padding: 50px;
+            background-color: #ecf0f1;
+            border-radius: 15px;
+            margin: 90px 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        section.about h1 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+        }
+
+        section.about p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+        }
+
+        /* Team member styling */
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-right: 25px;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            font-size: 2rem;
+            color: #34495e;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        /* Testimonials section styling */
+        .testimonials {
+            background-color: #ecf0f1;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            margin-bottom: 25px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 1.2rem;
+        }
+
+        .testimonial span {
+            display: block;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 40px;
+        }
+
+        .accordion {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            padding: 20px;
+            font-size: 1.2rem;
+            text-align: left;
+            width: 100%;
+            border: none;
+            outline: none;
+            transition: background-color 0.3s ease;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .accordion:hover {
+            background-color: #2980b9;
+        }
+
+        .panel {
+            padding: 20px;
+            background-color: #f9f9f9;
+            display: none;
+            margin-top: 15px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .panel.show {
+            display: block;
+            max-height: 500px;
+        }
+
+        /* Floating Emergency Button styling */
+        .floating-emergency {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 20px;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .floating-emergency:hover {
+            background-color: #c0392b;
+        }
+
+        .floating-emergency a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="website-name">
+            <img src="https://t3.ftcdn.net/jpg/03/35/16/66/360_F_335166628_b2M3WgWbbZqxNHsRt6ZxHzk1dtCrWhVx.jpg" alt="Logo" class="logo">
+            <h1>MindEase</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="careers.php">Careers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about">
+            <h1>About Us</h1>
+            <p>At MindEase, we are dedicated to helping individuals manage their mental health challenges...</p>
+            <p>Our approach is holistic, understanding that mental health is just as important as physical health...</p>
+            <p>We understand that life can be busy, and seeking mental health support should not be a stressful experience...</p>
+            <p>At MindEase, we are more than just therapists, we are advocates for mental well-being...</p>
+            <p>Your mental health matters, and we are here to walk alongside you every step of the way...</p>
+
+            <h2>Meet Our Team</h2>
+            <div class="team-member">
+                <img src="https://media.istockphoto.com/id/528442293/photo/the-doctor-will-see-you-now.jpg?s=612x612&w=0&k=20&c=ZpTbnBowinhEWnns9cTYACq0RTmFqoSV4suOBjdW_Wo=" alt="Dr. Sanya Menon">
+                <div>
+                    <h3>Dr. Sanya Menon</h3>
+                    <p>Licensed Clinical Psychologist</p>
+                    <p>Dr. Menon specializes in Cognitive Behavioral Therapy (CBT), with over a decade of experience helping clients overcome various mental health challenges. She brings a compassionate and evidence-based approach to therapy, empowering individuals to gain better control over their thoughts and behaviors.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="https://st.depositphotos.com/1005586/1284/i/450/depositphotos_12841879-stock-photo-doctor.jpg" alt="Jane Smith">
+                <div>
+                    <h3>Jane Smith</h3>
+                    <p>Licensed Therapist</p>
+                    <p>Jane is an experienced therapist specializing in mindfulness techniques, stress management, and emotional regulation. Whether in-person or online, her sessions offer a safe space for individuals to explore their feelings and develop healthier coping strategies to navigate life's challenges.</p>
+                </div>
+            </div>
+
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"MindEase has been life-changing for me..." <span>- Sarah L.</span></p>
+                </div>
+                <div class="testimonial">
+                    <p>"The therapists at MindEase are incredibly understanding..." <span>- Mark T.</span></p>
+                </div>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-section">
+                <button class="accordion">What is Cognitive Behavioral Therapy?</button>
+                <div class="panel">
+                    <p>Cognitive Behavioral Therapy (CBT) is a type of therapy that helps individuals identify and challenge negative thought patterns...</p>
+                </div>
+                <br>
+                <button class="accordion">How do I book an appointment?</button>
+                <div class="panel">
+                    <p>You can book an appointment online via our website or contact our office directly...</p>
+                </div>
+                <br>
+                <button class="accordion">What is the cost of therapy sessions?</button>
+                <div class="panel">
+                    <p>The cost of therapy sessions varies depending on the therapist and the type of session.</p>
+                </div>
+            </div>
+        </section>
+
+     
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p><strong>Email:</strong> support@mindease.com</p>
+            <p><strong>India:</strong> +91 9876543210</p>
+            <p><strong>USA:</strong> +1 (800) 123-4567</p>
+            <p><strong>UK:</strong> +44 7911 123456</p>
+            <p><strong>Singapore:</strong> +65 1234 5678</p>
+            <p><strong>Address:</strong> 123 Wellness Ave, Suite 456, New York, NY, 10001, USA</p>
+        </div>
+        <p>MindEase - Your mental health matters.</p>
+    </footer>
+
+    <script>
+        // Initialize FAQ accordion functionality
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                panel.classList.toggle("show");
+            });
+        }
+    </script>
+</body>
+</html>
